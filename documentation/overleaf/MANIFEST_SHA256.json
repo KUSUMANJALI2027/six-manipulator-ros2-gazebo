@@ -1,6 +1,6 @@
 {
   "IEEEtran.bst": "314f0ece704568faf827011bac498650691b2b5ee06320720830e782416d5a5f",
-  "README.md": "5010962140c9714c6c7247c3df9cb91b7b72059f686c37bb225052d8d3372d89",
+  "README.md": "c9d69cc9f964679ce5e8ab348392556238382fe00b3378852073ac6d7cadf51a",
   "analysis/analyze_feedback.py": "3a59ba7179e2798919f2acf6891103191a8cb4ec80854fdf6f218625817b27bf",
   "analysis/kinematics_reference.py": "4fdb10e13c688bf9354d62cd91442ca2d89377aa4f8eb23d3e519a6cdaba4633",
   "analysis/make_figures.py": "c6aeef1b4d42f41f1af3bea850a4fe62056925691aad524666e8c4d602817b4e",
@@ -28,7 +28,7 @@
   "data/joint_error_summary.csv": "91b27c5753547dcf530aa94eea622449ed614c11e6ec99f05c9241731827abca",
   "data/model_parameters.json": "b326caeea673adfab7def97b002ed8b8a06b64d44ffbc359a6a203fa7de5dd91",
   "data/numerical_validation.json": "a47e44a86d9eba045022da170ab9dda585ea945be178f486ef389e933e41ee16",
-  "details.tex": "b25f4f6c1171844c28a9367ddcd75ed1f7a1a879188ed7193d5634ac9d51b935",
+  "details.tex": "6b73cc4bcdce7be8d23d9e5760b56408cfff8da5aa00ce63aab7c44c670897a6",
   "figures/Delta_workspace.png": "4f0b976fe7494259034e23fc6bb5ade9a5ba1c33b128b21a5821cd8053571d9a",
   "figures/PUMA_workspace.png": "55c72fc94b4e6c8c99382f44ba9734addcdbce2e51290e1fac65fd3c189e658e",
   "figures/SCARA_workspace.png": "b7b10de77043ba9616cd0b9431866a41249a8a889f6c0a1c75fe87cd873eecb2",
@@ -39,7 +39,8 @@
   "figures/serial_errors.pdf": "df38fe4f46d9df661c4a7e0ab29c9b8f1bb41b5e0c84196f6ecfd11468e9adb8",
   "figures/six_robot_overview.pdf": "6b4788465a13e4c5c82434b3a2cd87e3c4be409ecefcdd8ecee4752ef3897a32",
   "figures/university_logo.png": "529eaff85b57e94e72b714ad7d6a5cd10f08b338d3c1b3333d84bfdaba863acb",
-  "main.tex": "61239867a03dba56f8ba163bdd60ba90e8356dca2765232badba837166fa2804",
+  "figures/university_logo_original.jpg": "fb487223e6d286568fcf8ddd6d54b69e2b86a0064016edd25d3c8c71d0533b82",
+  "main.tex": "44aa8d4bea00fc7c3968cb3abcd7b34c73c25a947bfcc2a43c70ac22cec15566",
   "model_tables.tex": "1330606f98f860fc72d829336e03d95aa3aaeed4565d47ce572f2ff5147c494c",
   "references.bib": "6bd3f420aba4c741e261aa79cf678b89f61fea3c46bed02cd1347994c4db49d0"
 }

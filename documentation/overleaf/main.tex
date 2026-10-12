@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,oneside]{report}
+\documentclass[11pt,a4paper,oneside]{report}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{mathptmx}
@@ -13,8 +13,8 @@
 \usepackage{listings}
 \input{details}
 \hypersetup{pdftitle={\ProjectTitle},pdfauthor={\StudentName}}
-\setstretch{1.25}
-\setlength{\parskip}{5pt}
+\setstretch{1.12}
+\setlength{\parskip}{4pt}
 \setlength{\parindent}{0pt}\setlength{\emergencystretch}{3em}
 \setlength{\headheight}{15pt}
 \setlist{itemsep=2pt,topsep=4pt}
@@ -41,8 +41,8 @@ Registration Number: \RegistrationNumber\par
 Batch: 2023--2027\par
 \small ORCID: \href{https://orcid.org/0009-0008-4421-5587}{\StudentORCID}\normalsize\par\vspace{10mm}
 Under the guidance of\par\vspace{5mm}
-\GuideName\par\vspace{3mm}\GuideDesignation\par\vfill
-\includegraphics[height=29mm]{figures/university_logo.png}\par\vspace{4mm}
+\GuideName\par\vspace{3mm}\GuideDesignation\par\vspace{8mm}
+\includegraphics[width=26mm,height=32mm,keepaspectratio]{figures/university_logo_original.jpg}\par\vspace{4mm}
 {\bfseries\University\par}
 School of Engineering and Technology\par
 Vizianagaram, Andhra Pradesh, India\par
@@ -129,57 +129,25 @@ The principal outcome is an integrated educational platform with reproducible ev
 
 \textbf{Keywords:} ROS 2; Gazebo; robot kinematics; serial manipulators; parallel manipulators; workspace; trajectory planning; simulation verification.
 \clearpage
+\setcounter{tocdepth}{0}
 \tableofcontents
-\clearpage\listoffigures
-\clearpage\listoftables
-\clearpage
-\frontchapter{ABBREVIATIONS AND NOTATION}
-\begin{tabularx}{\textwidth}{lX}
-\toprule
-Term & Meaning\\\midrule
-ROS 2 & Robot Operating System 2; middleware and robotics tools\\
-RViz & ROS visualisation tool\\
-DOF & Degree of freedom\\
-DH & Denavit--Hartenberg convention\\
-FK / IK & Forward / inverse kinematics\\
-URDF / SDF & Unified Robot Description Format / Simulation Description Format\\
-PID & Proportional, integral and derivative control\\
-CSV & Comma-separated values\\
-WSL & Windows Subsystem for Linux\\
-RMSE & Root-mean-square error\\
-R / P & Revolute / prismatic joint\\
-$\mathbf q$ & Actuator coordinates: radians or metres, according to joint type\\
-$\mathbf p,R$ & Tool position vector and orientation matrix\\
-$T$ & Homogeneous transform, or segment duration where stated\\
-$q_d,q_m$ & Commanded and measured actuator coordinates\\
-$e=q_m-q_d$ & Signed actuator tracking error\\
-\bottomrule
-\end{tabularx}
-
 \clearpage\pagenumbering{arabic}
 \chapter{INTRODUCTION}
-\section{Background}
-Robot manipulators combine mechanical geometry, coordinate transformations, control and software communication. Learning these topics separately can make it difficult to connect a joint value to an end-effector pose or to explain why a robot appears to move correctly but still has tracking error. A simulation laboratory provides an environment in which the learner can change an actuator coordinate, inspect the resulting transformation and observe an animated mechanism without requiring physical robot hardware.
+\section{Background and motivation}
+Robot manipulators connect mechanical geometry, coordinate transformations and control. A simulation laboratory lets learners change joint values, inspect the resulting tool pose and compare calculated motion with measured simulator feedback without physical hardware. ROS 2 provides communication between components \cite{ros2}; RViz displays geometry and Gazebo supports separate dynamic demonstrations.
 
-ROS 2 supplies a modular communication framework for robotics applications \cite{ros2}. In this project it connects user input, visualisation and feedback monitoring. RViz presents geometric and state information, while Gazebo provides the environment for the separate dynamic demonstrations. A displayed pose and a dynamically achieved pose are treated as different kinds of output.
+Serial manipulators form an open chain: SCARA, Stanford-type, PUMA-type and SCORBOT-type illustrate different joint arrangements. Parallel manipulators connect a platform through multiple branches: Delta and Stewart require simultaneous geometric closure. Each mechanism therefore uses an appropriate model rather than a forced common open-chain representation.
 
-\section{Serial and parallel manipulators}
-A serial manipulator consists of an open chain of joints and links. Its tool pose is obtained by composing successive link transformations. SCARA, Stanford-type, PUMA-type and SCORBOT-type models illustrate different joint arrangements and pose capabilities. A parallel manipulator connects the moving platform to the base through multiple branches; the branches must satisfy closure conditions simultaneously. Delta and Stewart models illustrate this second class.
-
-Using both classes in one laboratory allows the same learning sequence to be repeated: inspect geometry, apply actuator inputs, calculate FK, request an IK solution, generate a trajectory and examine the resulting data. The mathematical method is selected for the mechanism rather than forcing every robot into a single open-chain representation.
-
-\section{Project objectives}
+\section{Objectives}
 \begin{enumerate}
-\item Implement educational models of all six specified manipulators with explicit geometry, limits and units.
-\item Display current actuator coordinates, serial DH parameters or parallel geometry, and tool position and orientation.
-\item Provide FK, IK, sampled position workspaces and waypoint-based motion.
-\item Integrate ROS 2 and RViz and provide separate Gazebo physics demonstrations.
-\item Retain command/feedback recordings and evaluate tracking, closure and pose consistency within a clearly stated test scope.
+\item Implement six educational models with explicit geometry, limits and units.
+\item Display actuator values, model parameters, tool position and orientation.
+\item Provide FK, IK, sampled workspaces and smooth waypoint motion.
+\item Integrate ROS 2/RViz with separate Gazebo physics demonstrations.
+\item Evaluate retained command/feedback data, closure and pose consistency.
 \end{enumerate}
 \section{Contribution and scope}
-The project contribution is a common educational workflow and a verification package. It does not introduce a new general IK algorithm or establish superiority over existing robotics software. The recorded trials support the specific configurations, motions and settings used in those trials. They do not establish industrial accuracy, payload capability or collision-free operation.
-
-This report follows the supplied college-report structure, expanding the methodology into robot modelling, implementation, experiments and results. The system uses an existing computer and software; no physical actuator wiring or fabricated hardware is part of the completed work.
+The contribution is an integrated educational workflow and reproducible verification package. Established kinematic methods are used; no new general IK algorithm or superiority over other robotics tools is claimed. The recorded trials support only their tested configurations and motions. Industrial accuracy, payload capability, collision-free operation and physical hardware validation are outside the completed scope.
 
 \chapter{LITERATURE SURVEY}
 \section{Robotics foundations}
@@ -193,21 +161,6 @@ Gazebo System plugins expose simulation lifecycle functions and support custom b
 
 \section{Workspace estimation and research extensions}
 Gaussian-growth workspace sampling was proposed by Peidr\'{o} and colleagues to improve poorly sampled workspace regions \cite{gaussian}. Consequently, random point clouds and adaptive sampling alone should not be described as novel research contributions. The completed laboratory uses sampled workspaces for geometric interpretation. A separate proposal considers orientation, collision, approach clearance and manipulability for a UR5e assembly scenario; that proposal is discussed only as future work.
-
-\begin{table}[H]\centering\small
-\caption{Technical foundations and their use in this project}
-\begin{tabularx}{\textwidth}{p{3.4cm}XX}\toprule
-Source / method & Role in the project & Boundary of the claim\\\midrule
-Rigid-body kinematics \cite{modern}&FK, IK and closure equations&Educational geometry, not vendor calibration\\
-ROS 2 \cite{ros2}&Communication and modular integration&No middleware latency benchmark\\
-RViz \cite{rviz}&Geometry and pose display&Rendering is not dynamic validation\\
-Gazebo / Bullet \cite{gzplugin,bullet}&Recorded simulated response&Idealised bodies and disabled contact checks\\
-SciPy least squares \cite{scipy}&Bounded numerical solution&Local solver success is not global completeness\\
-Gaussian growth \cite{gaussian}&Context for future workspace research&Not implemented as a baseline in this report\\\bottomrule
-\end{tabularx}
-\end{table}
-\section{Identified educational need}
-A useful laboratory should expose the difference between a calculated pose, a visual representation and a measured simulation state. It should also retain test inputs and outputs so that a demonstration can be checked numerically. The present work addresses this educational integration need. A controlled student learning study has not been conducted, so improved learning outcomes are not claimed.
 
 \chapter{PROBLEM STATEMENT AND REQUIREMENTS}
 \section{Problem statement}
@@ -228,13 +181,10 @@ F7&Inspect simulated response&Command and measurement feedback from physics tria
 F8&Retain numerical evidence&CSV recordings, summaries, plots and validation reports\\\bottomrule
 \end{tabularx}
 \end{table}
-\section{Operating environment}
-The user-side installation uses Windows with Ubuntu 24.04 under WSL 2, ROS 2 Jazzy and Gazebo Sim. The recorded parallel integration inventory identifies Gazebo Sim 8.15.0, Bullet 3.24, GCC 13.3 and CMake 3.28.3. Numerical validation also ran in a separate Linux environment; it must not be confused with the user's ROS/Gazebo runtime.
+\section{Operating environment and acceptance}
+The user installation uses Ubuntu 24.04 under Windows WSL 2, ROS 2 Jazzy and Gazebo. The recorded parallel inventory identifies Gazebo Sim 8.15.0, Bullet 3.24, GCC 13.3 and CMake 3.28.3. Python, NumPy, SciPy and Qt support the interface and calculations. Separate numerical checks do not constitute a repeat of the user's simulator trials.
 
-A display-capable computer and the relevant software packages are required. Processor model, installed memory and GPU performance were not retained as benchmark metadata, so this report makes no hardware-speed claim. The existing installation supports Python, NumPy, SciPy, Qt and the ROS 2 Python client library.
-
-\section{Acceptance boundaries}
-The project is assessed by observed functionality and retained evidence, not by a single completion percentage. Numerical checks establish model consistency over the tested cases. The four serial recordings cover J1/J2 excitation and holding of other coordinates. The two parallel trials cover individual small actuator excursions around home. Full-workspace dynamic coverage, physical hardware performance and all-joint serial excitation are outside the retained evidence.
+Acceptance is based on observed functionality and retained evidence. Serial recordings excite J1/J2; parallel trials use individual small actuator excursions around home. Full-workspace dynamics and physical performance are not established.
 
 \chapter{SYSTEM ARCHITECTURE AND METHODOLOGY}
 \section{Three execution paths}
@@ -339,7 +289,7 @@ The two signs give candidate elbow configurations. Candidates must also satisfy 
 A target with $x=1$ m and $y=0.20$ m is outside the two-arm geometric reach because its planar radius exceeds $L_1+L_2=0.55$ m. Rejection of this target checks one clear infeasible case; it is not an exhaustive IK validation.
 
 \section{Stanford, PUMA and SCORBOT models}
-The Stanford-type model has a third prismatic coordinate with range 0.10--0.55 m. The PUMA-type model uses six revolute coordinates. The SCORBOT-type model uses five revolute coordinates and cannot generally achieve an arbitrary six-dimensional target pose. Their DH parameters are listed in Appendix~\ref{app:parameters} so the model is reproducible.
+The Stanford-type model has a third prismatic coordinate with range 0.10--0.55 m. The PUMA-type model uses six revolute coordinates. The SCORBOT-type model uses five revolute coordinates and cannot generally achieve an arbitrary six-dimensional target pose. Their DH parameters are listed in the accompanying \texttt{model\_parameters.json} and \texttt{model\_tables.tex} files so the model is reproducible.
 
 For a desired position $\mathbf p_d$ and orientation $R_d$, the consolidated serial solver minimises the bounded residual
 \begin{equation}
@@ -531,118 +481,22 @@ Every Delta input and every Stewart leg has a nonzero command span in its record
 \fig{parallel_tracking.pdf}{1}{Parallel actuator offsets, tracking errors and recorded closure diagnostics. Commands are dashed and measurements are solid in the top row.}
 The constraint-gap and FK residual values are numerical consistency results in idealised simulations. Their micrometre-scale magnitudes do not establish micrometre physical positioning accuracy. They are also not a basis for claiming Stewart is intrinsically more accurate than Delta, because mechanisms, units, geometry and controller settings differ.
 
-\section{Outcome against objectives}
-\begin{table}[H]\centering\small
-\caption{Evidence-supported project outcomes}
-\begin{tabularx}{\textwidth}{p{4cm}X}\toprule
-Objective&Retained evidence and interpretation\\\midrule
-Six-model kinematics&Near-home numerical checks pass for all six educational models\\
-Interactive visualisation&User-recorded views and confirmed moving demonstrations\\
-Workspace estimation&Calculated sampled position clouds; no volume certificate\\
-Waypoint movement&Quintic timing implementation and numerical path checks\\
-Serial dynamics&Four recordings; J1/J2 excited, other commands held\\
-Parallel dynamics&Two custom-plugin recordings; all actuators individually excited\\
-Industrial task feasibility&Not implemented; future UR5e research extension\\\bottomrule
-\end{tabularx}
-\end{table}
-
 \chapter{CONCLUSION AND FUTURE WORK}
 \section{Conclusion}
-The project combines six educational manipulator models with a common interaction and visualisation workflow. Users can inspect actuator values and model parameters, solve target poses, estimate sampled position workspaces and execute smooth actuator-space waypoint motion. Separate dynamic paths permit the difference between commanded motion and simulated response to be examined quantitatively.
+Six educational manipulator models share a workflow for inspecting parameters, solving target poses, sampling workspaces and executing quintic actuator-space trajectories. Separate dynamic demonstrations expose the difference between commanded and measured motion. Numerical checks and retained recordings support the reported scope: serial trials show transient and holding errors, while Delta and Stewart small-motion trials satisfy the declared closure and tracking gates.
 
-Numerical tests and retained simulator recordings support the stated demonstration scope. Serial recordings show both transient error and nonzero holding offsets. Delta and Stewart small-motion recordings satisfy the declared investigation gates and exhibit small recorded closure and pose-consistency residuals. The main accomplishment is an integrated, documented laboratory with an auditable distinction between calculation, rendering and simulated feedback.
+\section{Limitations and future work}
+Geometry, inertia and controller gains are illustrative. Friction, backlash, compliance, noise and payload robustness were not identified from hardware. Collision/contact checks are disabled. Serial trials excite only J1/J2, and parallel trials use small excursions around home. Local solvers and finite sampling do not prove global reachability or continuous path feasibility.
 
-\section{Limitations}
-The educational models have illustrative geometry, masses, inertias and controller gains. Hardware calibration, friction, backlash, compliance, sensor noise and payload robustness were not identified from measurements. Serial self-collision and parallel contacts are disabled. No contact-rich assembly performance or collision-free path guarantee is established.
+Next steps are all-joint serial tests, repeated trials, timestep/gain sensitivity and larger parallel motions with assembly-mode monitoring. A separate UR5e proposal adds task orientation, approach clearance, collision and manipulability to adaptive workspace estimation. It requires new implementation and matched-budget baseline experiments. Adaptive sampling has prior literature \cite{gaussian}; its novelty and performance cannot be inferred from this educational laboratory.
 
-Serial trials excite only J1 and J2. Parallel trials use small individual excursions around home. Local IK and closure solutions do not enumerate all solutions. Sampled path and workspace checks can miss behaviour between samples. The evidence contains no repeated-seed statistical comparison, timestep-convergence study or controlled educational-effectiveness study.
-
-\section{Proposed UR5e research extension}
-A separate research proposal recommends task-aware adaptive workspace estimation for an official UR5e model. This would extend the question from ``Can the tool reach this position?'' to ``Can the robot approach this pose with the required orientation, clearance and kinematic quality?'' It is not part of the completed results in this report.
-
-The proposed extension would require a validated vendor geometry, a collision model, insertion-tool and fixture definitions, an adaptive refinement policy and fair baseline comparisons. Uniform and quasi-random sampling should be compared with the adaptive method at matched computational budgets. Reference-map uncertainty, IK search failures, false-feasible classifications and wall-clock cost should be reported. An IK solver failure alone must not be labelled a proof of unreachability.
-
-A focused UR5e study can reuse the logging and visualisation experience from this laboratory, but its performance claims require new experiments. Adaptive sampling already has prior literature \cite{gaussian}; novelty must be established for the specific new method and its evidence, not inferred from using ROS or Gazebo.
-
-\section{Recommended next validation steps}
-Extend serial excitation to all actuators, repeat trials under controlled conditions, study timestep and gain sensitivity, and introduce collision-aware trajectory checks. For parallel mechanisms, evaluate larger and simultaneous motions with explicit assembly-mode monitoring. Physical deployment would additionally require calibrated models, appropriate safety systems and independent measurements.
-
-\appendix
-\chapter{MODEL PARAMETERS}\label{app:parameters}
-All lengths below are in metres and angles in radians. These tables describe the educational implementation. They must not be substituted for a manufacturer's specification.
-\input{model_tables}
-
-\chapter{DEMONSTRATION AND REPRODUCIBILITY GUIDE}
-\section{Starting the installed laboratory}
-The following commands refer to the existing user installation. They are not an installer for a new machine. In a new Ubuntu terminal, source the ROS environment before launching the application:
-\begin{lstlisting}
-source /opt/ros/jazzy/setup.bash
-cd ~/robotics_project/robotics_suite
-bash start.sh
-\end{lstlisting}
-Choose the kinematics interface for the six-model demonstration or the serial physics interface for command/feedback trials. If using the earlier direct launch files, \texttt{bash run.sh} opens the kinematics application and \texttt{bash run\_physics.sh} opens the serial physics application.
-
-For the separately installed parallel add-on:
-\begin{lstlisting}
-cd ~/robotics_project/parallel_bullet_lab_v1
-bash run_gazebo.sh Delta
-# For a separate Stewart demonstration:
-bash run_gazebo.sh Stewart
-\end{lstlisting}
-Use one demonstration at a time. The optional Gazebo mirror in the main GUI is a geometry display; use the add-on above for the parallel dynamic demonstration.
-
-\section{Suggested demonstration sequence}
-\begin{enumerate}
-\item Select SCARA and show the live actuator and DH tables. Change one coordinate at a time and explain which term changes.
-\item Apply a valid target and explain the FK result. Use the earlier analytical example to discuss elbow configurations.
-\item Load demonstration waypoints, run them and explain the difference between actuator interpolation and Cartesian straightness.
-\item Sample the workspace and explain its position-only, finite-sample meaning.
-\item Repeat the model-selection demonstration for Stanford, PUMA, SCORBOT, Delta and Stewart, noting their different pose capabilities.
-\item Open a serial physics demonstration and compare command and measured values.
-\item Open Delta or Stewart in the parallel plugin and explain its body-derived feedback and small-motion test scope.
-\item Present the retained plots and error tables rather than relying on animation alone.
-\end{enumerate}
-
-\section{Reproducing the recorded-data analysis}
-The Overleaf project includes the six retained recordings, summary CSV and JSON validation records in \texttt{data/}. It also includes the analysis scripts in \texttt{analysis/}. Consult that directory's source for the expected paths and dependencies. These files preserve the evidence used for the report; compiling the report itself requires only LaTeX and the included figures.
-
-The full ROS/Gazebo application and C++ plugin remain in the separately supplied project release. The Overleaf ZIP is the report source and evidence package, not a replacement for that software installation. No new simulator trial was executed while preparing this document.
-
-\section{Troubleshooting demonstrated issues}
-\begin{tabularx}{\textwidth}{p{4.6cm}X}\toprule
-Observed issue&Check / resolution\\\midrule
-\texttt{ros2: command not found}&Source the installed Jazzy setup file in that terminal.\\
-RViz workspace display says empty topic&Select the publisher's actual marker topic. In the earlier SCARA workspace demonstration it was \texttt{/scara\_workspace}.\\
-ROS topic ends with a numeric token&Use a valid token such as \texttt{joint\_1}, not a token consisting only of \texttt{1}.\\
-No fresh physics feedback&Inspect launch errors and simulator activity before treating the display as a passed trial.\\
-IK target not accepted&Check model DOF, units and limits; a numerical failure need not prove global infeasibility.\\\bottomrule
-\end{tabularx}
-
-\chapter{EVIDENCE REGISTER}
-\begin{longtable}{p{7.8cm}p{6.2cm}}
-\caption{Retained files supporting the numerical results}\\\toprule
-File in \texttt{data/}&Purpose\\\midrule\endfirsthead
-\toprule File&Purpose\\\midrule\endhead
-\path{SCARA_physics_feedback_20260917_153115.csv}&Original retained SCARA serial recording\\
-\path{Stanford_physics_feedback_20260917_151641.csv}&Original retained Stanford serial recording\\
-\path{PUMA_physics_feedback_20260917_153830.csv}&Selected retained PUMA recording\\
-\path{SCORBOT_physics_feedback_20260917_155712.csv}&Selected retained SCORBOT recording\\
-\path{Delta_gazebo_feedback.csv}&Parallel Delta Gazebo trial\\
-\path{Stewart_gazebo_feedback.csv}&Parallel Stewart Gazebo trial\\
-\path{joint_error_summary.csv}&Per-joint serial tracking statistics\\
-\path{gazebo_verification.json}&Parallel metrics and screening outcomes\\
-\path{numerical_validation.json}&Recorded numerical test outputs and scope\\
-\path{model_parameters.json}&Educational geometry, home coordinates and limits\\\bottomrule
-\end{longtable}
-The six-view figure is assembled from original user-recorded displays. Workspace images are calculated model outputs. Tracking figures are generated from retained CSV evidence. The cover logo is reproduced from the user-provided institutional sample. Administrative signature lines are intentionally unsigned.
+\section*{Source code, model parameters and results}
+The complete implementation, model parameter tables, launch instructions, original feedback CSV files and supporting analysis are available at:
+\begin{center}\url{https://github.com/KUSUMANJALI2027/six-manipulator-ros2-gazebo}\end{center}
+Use \texttt{model\_parameters.json} and \texttt{dh\_tables/} for geometry; \texttt{evidence/} for recorded simulator feedback; \texttt{reports/} for plots and calculated exports; and \texttt{documentation/overleaf/} for editable report files. Extended parameter tables are retained in \texttt{model\_tables.tex} in the Overleaf package. The repository README gives installation and launch instructions.
 
 \clearpage\addcontentsline{toc}{chapter}{REFERENCES}
 \renewcommand{\bibname}{REFERENCES}
-\section*{Source code and results repository}
-The project source code, launch scripts, model parameters, recorded simulator feedback, calculated results and supporting documentation are available at:
-\begin{center}\url{https://github.com/KUSUMANJALI2027/six-manipulator-ros2-gazebo}\end{center}
-Recorded feedback is stored in \texttt{evidence/}; plots and calculated exports are stored in \texttt{reports/}. The editable report source is in \texttt{documentation/overleaf/}. Consult the repository README for installation and execution instructions. The validation scope and limitations stated in this report also apply to the repository outputs.
-
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 \end{document}

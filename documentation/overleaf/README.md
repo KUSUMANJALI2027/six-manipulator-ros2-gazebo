@@ -20,3 +20,6 @@ Run `latexmk -pdf main.tex`, or run `pdflatex main`, `bibtex main`, `pdflatex ma
 - MANIFEST_SHA256.json: checksums of packaged source/evidence files.
 
 The full ROS application is supplied separately; this ZIP is the report and evidence package. Serial tests cover J1/J2 excitation, while parallel tests cover the prescribed Delta and Stewart actuator trials. The UR5e adaptive workspace proposal is future work, not an implemented result. Signature spaces are intentionally unsigned. Do not treat the unsigned certificate as an issued institutional certificate.
+
+## October 13 revision
+The compiled report is 25 pages including front matter and references. The guide designation is Associate Professor. Extended model tables remain as supplementary source and are not included in the printed report. The cover uses the original embedded institutional logo with preserved aspect ratio and fixed placement.
