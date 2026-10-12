@@ -1,0 +1,7 @@
+PASS SCARA: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection
+PASS Stanford: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection
+PASS PUMA: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection
+PASS SCORBOT: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection
+PASS Delta: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection
+PASS Stewart: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection
+PASS: 6 educational models. ROS/RViz/Gazebo runtime verification is separate.

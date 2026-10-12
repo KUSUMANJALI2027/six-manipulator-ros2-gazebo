@@ -1,0 +1,7 @@
+PASS SCARA: articulated topology, positive inertias, joint-coordinate mapping against DH in 80 random configurations, shifted limits
+PASS Stanford: articulated topology, positive inertias, joint-coordinate mapping against DH in 80 random configurations, shifted limits
+PASS PUMA: articulated topology, positive inertias, joint-coordinate mapping against DH in 80 random configurations, shifted limits
+PASS SCORBOT: articulated topology, positive inertias, joint-coordinate mapping against DH in 80 random configurations, shifted limits
+NOT TESTED: Gazebo parser/plugin loading, controller stability, contact behavior, ROS bridge runtime. First-run verification required.
+
+Topic-name fix: all command paths use cmd/joint_N. All four models checked for valid tokens and matching commands. ROS runtime still requires user verification.

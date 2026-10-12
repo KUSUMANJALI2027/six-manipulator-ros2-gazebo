@@ -1,0 +1,1 @@
+Local validation: g++ C++17; native Bullet 3.24 Debian user-space libraries; 51 s Delta and 87 s Stewart driven trials; 2 s drive-disabled gravity controls. The Gazebo system-plugin translation unit and user ROS reader could not be compiled/run here because ROS/Gazebo are not installed in this build environment. User WSL integration validation remains pending.

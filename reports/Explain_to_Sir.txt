@@ -1,0 +1,20 @@
+Sir, mana project lo six robot manipulators movement ni software lo study chesthunnam: SCARA, Stanford, PUMA, SCORBOT, Delta and Stewart.
+
+Joint values isthe tool position and orientation calculate avuthayi. Dheenini forward kinematics antam. Tool target isthe required joint values calculate avuthayi; adhi inverse kinematics.
+
+Serial robots ki DH tables live ga update avuthayi. Delta and Stewart ki branch/leg geometry use chesthunnam. Workspace points robot modeled limits lopala reach ayye positions estimate chupisthayi. Waypoints madhya smooth movement kosam quintic trajectories use chesam.
+
+RViz lo six-robot visualization working. Four serial robots ki Gazebo lo gravity and joint controllers tho trials chesam. Command and measured joint values CSV lo save chesi error plots prepare chesam. Uploaded tests lo first two joints move chesam, remaining joints hold lo unnayi.
+
+Delta and Stewart ki custom Bullet physics system ni Gazebo lo integrate chesam. Delta three actuators, Stewart six leg actuators ki small-motion tests chesi, feedback, joint limits, loop closure and platform pose agreement verify chesam. Rendu Gazebo windows kuda render ayyayi. Idhi stock Gazebo physics adapter kaadhu; mana custom Bullet System plugin.
+
+Demo order: SCARA select -> Load demo waypoints -> Run waypoints -> Sample workspace. DH values and tool XYZ chupinchali. Tarvatha Delta/Stewart geometry chupinchali. Finally report lo four robots command-versus-feedback plots chupinchali.
+
+Remember:
+FK: joints -> tool pose.
+IK: target pose -> actuator values.
+Workspace: possible positions estimate.
+Trajectory: time tho smooth ga joint values change avvadam.
+Feedback: simulator lo vachina actual joint response.
+
+Do not claim: exact industrial geometry, hardware accuracy, collision-free planning, or complete validation across every pose, payload and collision condition.

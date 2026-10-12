@@ -1,0 +1,91 @@
+\section{SCARA-type serial parameters}
+\begin{table}[H]\centering
+\caption{SCARA educational DH parameters}
+\begin{tabular}{crrrrr}\toprule
+Joint & Type & $\theta_i$ & $d_i$ & $a_i$ & $\alpha_i$\\\midrule
+1&R&$q_1$&$0.235$&$0.3$&$0$\\
+2&R&$q_2$&$0$&$0.25$&$0$\\
+3&P&$0$&$-q_3$&$0$&$0$\\
+4&R&$q_4$&$0$&$0$&$0$\\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering
+\caption{SCARA home coordinates and limits}
+\begin{tabular}{crrrl}\toprule Joint & Home & Lower & Upper & Unit\\\midrule
+1&0.3000&-2.6000&2.6000&rad\\
+2&-0.8000&-2.6000&2.6000&rad\\
+3&0.0500&0.0000&0.1500&m\\
+4&0.0000&-3.1416&3.1416&rad\\
+\bottomrule\end{tabular}\end{table}
+\clearpage
+\section{Stanford-type serial parameters}
+\begin{table}[H]\centering
+\caption{Stanford educational DH parameters}
+\begin{tabular}{crrrrr}\toprule
+Joint & Type & $\theta_i$ & $d_i$ & $a_i$ & $\alpha_i$\\\midrule
+1&R&$q_1$&$0.3$&$0$&$-\pi/2$\\
+2&R&$q_2$&$0.12$&$0$&$\pi/2$\\
+3&P&$0$&$0.08+q_3$&$0$&$0$\\
+4&R&$q_4$&$0$&$0$&$-\pi/2$\\
+5&R&$q_5$&$0$&$0$&$\pi/2$\\
+6&R&$q_6$&$0.1$&$0$&$0$\\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering
+\caption{Stanford home coordinates and limits}
+\begin{tabular}{crrrl}\toprule Joint & Home & Lower & Upper & Unit\\\midrule
+1&0.3000&-2.6000&2.6000&rad\\
+2&0.5000&-2.6000&2.6000&rad\\
+3&0.3000&0.1000&0.5500&m\\
+4&0.2000&-2.6000&2.6000&rad\\
+5&0.4000&-2.6000&2.6000&rad\\
+6&0.0000&-2.6000&2.6000&rad\\
+\bottomrule\end{tabular}\end{table}
+\clearpage
+\section{PUMA-type serial parameters}
+\begin{table}[H]\centering
+\caption{PUMA educational DH parameters}
+\begin{tabular}{crrrrr}\toprule
+Joint & Type & $\theta_i$ & $d_i$ & $a_i$ & $\alpha_i$\\\midrule
+1&R&$q_1$&$0.32$&$0$&$\pi/2$\\
+2&R&$q_2$&$0$&$0.32$&$0$\\
+3&R&$q_3$&$0.08$&$0.04$&$-\pi/2$\\
+4&R&$q_4$&$0.28$&$0$&$\pi/2$\\
+5&R&$q_5$&$0$&$0$&$-\pi/2$\\
+6&R&$q_6$&$0.1$&$0$&$0$\\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering
+\caption{PUMA home coordinates and limits}
+\begin{tabular}{crrrl}\toprule Joint & Home & Lower & Upper & Unit\\\midrule
+1&0.2000&-2.6000&2.6000&rad\\
+2&0.4000&-2.6000&2.6000&rad\\
+3&-0.6000&-2.6000&2.6000&rad\\
+4&0.2000&-2.6000&2.6000&rad\\
+5&0.5000&-2.6000&2.6000&rad\\
+6&0.0000&-2.6000&2.6000&rad\\
+\bottomrule\end{tabular}\end{table}
+\clearpage
+\section{SCORBOT-type serial parameters}
+\begin{table}[H]\centering
+\caption{SCORBOT educational DH parameters}
+\begin{tabular}{crrrrr}\toprule
+Joint & Type & $\theta_i$ & $d_i$ & $a_i$ & $\alpha_i$\\\midrule
+1&R&$q_1$&$0.3$&$0$&$\pi/2$\\
+2&R&$q_2$&$0$&$0.25$&$0$\\
+3&R&$q_3$&$0$&$0.22$&$0$\\
+4&R&$q_4$&$0$&$0$&$\pi/2$\\
+5&R&$q_5$&$0.1$&$0$&$0$\\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering
+\caption{SCORBOT home coordinates and limits}
+\begin{tabular}{crrrl}\toprule Joint & Home & Lower & Upper & Unit\\\midrule
+1&0.2000&-2.6000&2.6000&rad\\
+2&0.5000&-2.6000&2.6000&rad\\
+3&-0.8000&-2.6000&2.6000&rad\\
+4&0.3000&-2.6000&2.6000&rad\\
+5&0.2000&-2.6000&2.6000&rad\\
+\bottomrule\end{tabular}\end{table}
+\clearpage\section{Parallel-model parameters}
+\begin{table}[H]\centering\caption{Delta geometry and actuator limits}
+\begin{tabular}{lr}\toprule Parameter&Value\\\midrule Base radius&0.28 m\\Platform radius&0.075 m\\Upper-arm length&0.20 m\\Lower-arm length&0.48 m\\Base height&0.85 m\\Each home angle&0.30 rad\\Each actuator range&$[-0.35,1.15]$ rad\\\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering\caption{Stewart geometry and actuator limits}
+\begin{tabular}{lr}\toprule Parameter&Value\\\midrule Base radius&0.32 m\\Platform radius&0.20 m\\Home platform height&0.48 m\\Home roll, pitch, yaw&0 rad\\Each home leg length&0.5241625 m\\Each actuator range&$[0.30,0.75]$ m\\\bottomrule\end{tabular}\end{table}
+Base anchor angles are 10, 110, 130, 230, 250, 350 degrees. Platform anchor angles are 50, 70, 170, 190, 290, 310 degrees. Anchor coordinates and all joint timing limits are preserved in \path{data/model_parameters.json}.

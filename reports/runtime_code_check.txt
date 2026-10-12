@@ -1,0 +1,1 @@
+PASS: physics_lab.py tick tested in isolation with fake ROS/Qt objects. A four-second segment at simulation t=12, start=10 reached its exact midpoint while wall time was 1000. This is a unit check, not a Gazebo integration test.

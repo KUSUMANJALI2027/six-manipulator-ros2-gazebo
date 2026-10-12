@@ -1,0 +1,12 @@
+Save parallel_bullet_lab_v1.zip to C:\robotics.
+Run in Ubuntu:
+
+python3 -m zipfile -e /mnt/c/robotics/parallel_bullet_lab_v1.zip ~/robotics_project
+cd ~/robotics_project/parallel_bullet_lab_v1
+bash build_and_test.sh
+
+Upload the parallel_trial_results_*.zip created in C:\robotics.
+The script builds a custom Bullet Gazebo system and tests Delta/Stewart only.
+Existing four-robot source and results are unchanged.
+
+Local native-Bullet dynamics tests passed. Your Gazebo integration is not yet verified.

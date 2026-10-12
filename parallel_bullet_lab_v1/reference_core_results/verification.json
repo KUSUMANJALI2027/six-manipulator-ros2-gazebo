@@ -1,0 +1,81 @@
+[
+  {
+    "robot": "Delta",
+    "file": "Delta_core_feedback.csv",
+    "samples": 2551,
+    "end_time_s": 51.0,
+    "command_span": [
+      0.040000000000000036,
+      0.040000000000000036,
+      0.040000000000000036
+    ],
+    "units": "rad",
+    "max_abs_tracking_error": [
+      0.014139306500000004,
+      0.01414076689999999,
+      0.01414076689999999
+    ],
+    "last_5s_max_abs_error": [
+      4.070999999994385e-06,
+      7.557900000010331e-06,
+      2.3472299999993673e-05
+    ],
+    "max_anchor_or_slider_gap_m": 9.170742601e-07,
+    "sampled_pose_vs_measured_actuator_fk_position_m": 5.952470300420639e-06,
+    "sampled_pose_vs_measured_actuator_fk_rotation_rad": 0.00011256343862473049,
+    "gates": {
+      "measured_actuators_within_model_limits": true,
+      "full_trial_recorded": true,
+      "each_actuator_command_varied": true,
+      "gap_below_1mm": true,
+      "fk_position_below_1mm": true,
+      "fk_orientation_below_0_01rad": true,
+      "tail_tracking_below_0_01rad_or_1mm": true
+    },
+    "investigation_gates_passed": true
+  },
+  {
+    "robot": "Stewart",
+    "file": "Stewart_core_feedback.csv",
+    "samples": 4351,
+    "end_time_s": 87.0,
+    "command_span": [
+      0.0040000000000000036,
+      0.0040000000000000036,
+      0.0040000000000000036,
+      0.0040000000000000036,
+      0.0040000000000000036,
+      0.0040000000000000036
+    ],
+    "units": "m",
+    "max_abs_tracking_error": [
+      0.001335918900000066,
+      0.0013359785000000013,
+      0.0013359785000000013,
+      0.001335918900000066,
+      0.0013358593000000196,
+      0.001335918900000066
+    ],
+    "last_5s_max_abs_error": [
+      6.555999999546813e-07,
+      6.555999999546813e-07,
+      1.6093000000383384e-06,
+      7.153000000093002e-07,
+      3.457099999937263e-06,
+      6.020100000059259e-06
+    ],
+    "max_anchor_or_slider_gap_m": 1.908279756e-07,
+    "sampled_pose_vs_measured_actuator_fk_position_m": 2.6030537027957515e-07,
+    "sampled_pose_vs_measured_actuator_fk_rotation_rad": 6.317663926571862e-07,
+    "gates": {
+      "measured_actuators_within_model_limits": true,
+      "full_trial_recorded": true,
+      "each_actuator_command_varied": true,
+      "gap_below_1mm": true,
+      "fk_position_below_1mm": true,
+      "fk_orientation_below_0_01rad": true,
+      "tail_tracking_below_0_01rad_or_1mm": true
+    },
+    "investigation_gates_passed": true
+  }
+]

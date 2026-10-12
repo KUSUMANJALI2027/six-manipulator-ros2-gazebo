@@ -1,0 +1,15 @@
+SIX ROBOT LAB — UPDATED VERIFIED EVIDENCE
+
+PDF, editable Word report and 11-slide PPT are under reports/.
+Original serial and parallel feedback data are under evidence/.
+
+Install this consolidated release separately:
+python3 -m zipfile -e /mnt/c/robotics/robotics_release_20261006.zip ~/robotics_project
+cd ~/robotics_project/robotics_release_20261006
+bash start.sh
+
+The original robotics_suite is unchanged.
+Options 6/7 reuse your already-built parallel_bullet_lab_v1 when available.
+All six models have physics-trial evidence, with coverage and limitations stated in the report.
+Four serial recordings excited J1/J2 while remaining axes held. Parallel tests excited all modeled actuators individually around home.
+No collision-free operation, industrial geometry or hardware accuracy is claimed.

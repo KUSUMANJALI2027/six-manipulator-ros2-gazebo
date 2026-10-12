@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-06T08:02:51.553487+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "scope": "Numerical and XML checks only; no ROS or Gazebo runtime executed by this script.",
+  "checks": [
+    {
+      "test": "test_models.py",
+      "exit_code": 0,
+      "stdout": "PASS SCARA: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection\nPASS Stanford: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection\nPASS PUMA: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection\nPASS SCORBOT: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection\nPASS Delta: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection\nPASS Stewart: home + 12 pose round trips, path closure, actuator timing and limits, SDF XML, distant-target rejection\nPASS: 6 educational models. ROS/RViz/Gazebo runtime verification is separate.\n",
+      "stderr": ""
+    },
+    {
+      "test": "test_physics_models.py",
+      "exit_code": 0,
+      "stdout": "PASS SCARA: articulated topology, positive inertias, joint-coordinate mapping against DH in 80 random configurations, shifted limits\nPASS Stanford: articulated topology, positive inertias, joint-coordinate mapping against DH in 80 random configurations, shifted limits\nPASS PUMA: articulated topology, positive inertias, joint-coordinate mapping against DH in 80 random configurations, shifted limits\nPASS SCORBOT: articulated topology, positive inertias, joint-coordinate mapping against DH in 80 random configurations, shifted limits\nNOT TESTED: Gazebo parser/plugin loading, controller stability, contact behavior, ROS bridge runtime. First-run verification required.\n",
+      "stderr": "/workspace/scratch/3694b1a3e30a/completion/robotics_suite/serial_sdf.py:9: UserWarning: Gimbal lock detected. Setting third angle to zero since it is not possible to uniquely determine all angles.\n  def pose(t):return ' '.join(f'{v:.12g}' for v in np.r_[t[:3,3],Rotation.from_matrix(t[:3,:3]).as_euler('xyz')])\n"
+    }
+  ]
+}

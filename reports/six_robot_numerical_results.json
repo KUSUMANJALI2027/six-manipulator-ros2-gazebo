@@ -1,0 +1,158 @@
+[
+  {
+    "robot": "SCARA",
+    "duration_s": 16.0,
+    "workspace_points": 1200,
+    "workspace_attempts": 1200,
+    "ik_position_residual_m": 1.1083453333407063e-14,
+    "ik_orientation_residual_rad": 1.2420126521000465e-16,
+    "max_sampled_loop_residual_m": null,
+    "max_velocity_limit_ratio": 0.25390625000000006,
+    "max_acceleration_limit_ratio": 0.0938164500000002,
+    "target_pose": [
+      0.5006096134809876,
+      0.07997512921209259,
+      0.145,
+      0.0,
+      0.0,
+      -0.28
+    ],
+    "solved_actuators": [
+      0.5200000000000022,
+      -0.8000000000000045,
+      0.08999999999998892,
+      2.339637474945839e-15
+    ]
+  },
+  {
+    "robot": "Stanford",
+    "duration_s": 16.0,
+    "workspace_points": 1200,
+    "workspace_attempts": 1200,
+    "ik_position_residual_m": 1.3176340566954531e-12,
+    "ik_orientation_residual_rad": 3.2202097736725015e-12,
+    "max_sampled_loop_residual_m": null,
+    "max_velocity_limit_ratio": 0.12890625,
+    "max_acceleration_limit_ratio": 0.04961446875000011,
+    "target_pose": [
+      0.1620184612269392,
+      0.2399581714379721,
+      0.696014521553437,
+      0.15115290009955873,
+      0.8859633475574991,
+      0.8134817637720206
+    ],
+    "solved_actuators": [
+      0.5199999999923973,
+      0.4999999999969872,
+      0.29999999999933585,
+      0.20000000001985907,
+      0.40000000000184244,
+      -1.442782024968915e-11
+    ]
+  },
+  {
+    "robot": "PUMA",
+    "duration_s": 16.0,
+    "workspace_points": 1200,
+    "workspace_attempts": 1200,
+    "ik_position_residual_m": 0.0,
+    "ik_orientation_residual_rad": 4.3095920297005145e-16,
+    "max_sampled_loop_residual_m": null,
+    "max_velocity_limit_ratio": 0.12890625,
+    "max_acceleration_limit_ratio": 0.04961446875000011,
+    "target_pose": [
+      0.36608791062262114,
+      0.06543881386036554,
+      0.8064295268482022,
+      0.04137341318600257,
+      -0.3036399032352195,
+      0.6037388447916716
+    ],
+    "solved_actuators": [
+      0.4200000000000001,
+      0.3999999999999999,
+      -0.5999999999999996,
+      0.20000000000000032,
+      0.4999999999999995,
+      -1.2729110215302894e-17
+    ]
+  },
+  {
+    "robot": "SCORBOT",
+    "duration_s": 16.0,
+    "workspace_points": 1200,
+    "workspace_attempts": 1200,
+    "ik_position_residual_m": 4.52075195049005e-15,
+    "ik_orientation_residual_rad": 2.297264396438999e-15,
+    "max_sampled_loop_residual_m": null,
+    "max_velocity_limit_ratio": 0.12890625,
+    "max_acceleration_limit_ratio": 0.04961446875000011,
+    "target_pose": [
+      0.392235313017684,
+      0.17516152247704236,
+      0.254841939185556,
+      3.141592653589793,
+      0.0,
+      0.2200000000000002
+    ],
+    "solved_actuators": [
+      0.42000000000000126,
+      0.5000000000000265,
+      -0.8000000000000503,
+      0.300000000000026,
+      0.2000000000000016
+    ]
+  },
+  {
+    "robot": "Delta",
+    "duration_s": 16.0,
+    "workspace_points": 1200,
+    "workspace_attempts": 1200,
+    "ik_position_residual_m": 8.605670465691684e-17,
+    "ik_orientation_residual_rad": 0.0,
+    "max_sampled_loop_residual_m": 2.220446049250313e-16,
+    "max_velocity_limit_ratio": 0.12890625,
+    "max_acceleration_limit_ratio": 0.04961446875000011,
+    "target_pose": [
+      -0.030683107150073056,
+      3.2590891337763287e-17,
+      0.49979147937046675,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "solved_actuators": [
+      0.5200000000000002,
+      0.2999999999999998,
+      0.3000000000000005
+    ]
+  },
+  {
+    "robot": "Stewart",
+    "duration_s": 16.0,
+    "workspace_points": 1148,
+    "workspace_attempts": 1200,
+    "ik_position_residual_m": 0.0,
+    "ik_orientation_residual_rad": 0.0,
+    "max_sampled_loop_residual_m": 5.356604049211455e-12,
+    "max_velocity_limit_ratio": 0.19968357523782523,
+    "max_acceleration_limit_ratio": 0.07378157942989079,
+    "target_pose": [
+      0.0349999999999999,
+      1.3310841600464098e-16,
+      0.505,
+      0.03999999999999991,
+      2.220446049250313e-16,
+      -3.122502256758253e-17
+    ],
+    "solved_actuators": [
+      0.541975324595421,
+      0.5663275957706052,
+      0.5501125048628744,
+      0.5475567200787754,
+      0.5527617589017931,
+      0.5304349867290822
+    ]
+  }
+]

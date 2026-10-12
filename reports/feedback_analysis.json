@@ -1,0 +1,277 @@
+[
+  {
+    "source": "PUMA_physics_feedback_20260917_153830.csv",
+    "sha256": "c07de644217ca35621e31913b103c39126cd7a048eb5061f6cba759ce874503d",
+    "samples": 3258,
+    "time_start_s": 0.068,
+    "time_end_s": 157.862,
+    "duplicate_timestamps": 0,
+    "last_window_duration_s": 4.9979999999999905,
+    "joints": [
+      {
+        "robot": "PUMA",
+        "joint": 1,
+        "unit": "deg",
+        "command_span": 8.594366926962344,
+        "command_varied": true,
+        "final_abs_error": 0.000565608645104021,
+        "sample_rmse": 0.31114018914239405,
+        "peak_abs_error": 2.3978442596952974,
+        "last_5s_abs_error_max": 0.000565608645104021
+      },
+      {
+        "robot": "PUMA",
+        "joint": 2,
+        "unit": "deg",
+        "command_span": 6.8754935415698775,
+        "command_varied": true,
+        "final_abs_error": 0.005525702143600597,
+        "sample_rmse": 0.656476101107096,
+        "peak_abs_error": 2.7181038459695372,
+        "last_5s_abs_error_max": 0.007085423223688991
+      },
+      {
+        "robot": "PUMA",
+        "joint": 3,
+        "unit": "deg",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.00544039268560681,
+        "sample_rmse": 0.09704558063596833,
+        "peak_abs_error": 0.43121920532738045,
+        "last_5s_abs_error_max": 0.005978129221112738
+      },
+      {
+        "robot": "PUMA",
+        "joint": 4,
+        "unit": "deg",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.03687127629834208,
+        "sample_rmse": 0.036872784572006795,
+        "peak_abs_error": 0.03687362886849854,
+        "last_5s_abs_error_max": 0.036871408836077535
+      },
+      {
+        "robot": "PUMA",
+        "joint": 5,
+        "unit": "deg",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.006752003863336853,
+        "sample_rmse": 0.006750711668230735,
+        "peak_abs_error": 0.006752003863336853,
+        "last_5s_abs_error_max": 0.006752003863336853
+      },
+      {
+        "robot": "PUMA",
+        "joint": 6,
+        "unit": "deg",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.009172365760964682,
+        "sample_rmse": 0.009168472323979252,
+        "peak_abs_error": 0.009172365760964682,
+        "last_5s_abs_error_max": 0.009172365760964682
+      }
+    ]
+  },
+  {
+    "source": "SCARA_physics_feedback_20260917_153115.csv",
+    "sha256": "7a5d54cd3d0d6c2e1497eddb82ed9cc3d12b355768c01f64e8b5ae8d6cfeaf9e",
+    "samples": 5131,
+    "time_start_s": 0.068,
+    "time_end_s": 255.272,
+    "duplicate_timestamps": 63,
+    "last_window_duration_s": 4.9979999999999905,
+    "joints": [
+      {
+        "robot": "SCARA",
+        "joint": 1,
+        "unit": "deg",
+        "command_span": 8.594366926962348,
+        "command_varied": true,
+        "final_abs_error": 3.5487593379457394e-05,
+        "sample_rmse": 0.0916641281330393,
+        "peak_abs_error": 1.423812086183851,
+        "last_5s_abs_error_max": 0.00023301392887375982
+      },
+      {
+        "robot": "SCARA",
+        "joint": 2,
+        "unit": "deg",
+        "command_span": 6.875493541569881,
+        "command_varied": true,
+        "final_abs_error": 0.004048343094503082,
+        "sample_rmse": 0.08957073715705044,
+        "peak_abs_error": 1.2255400603016255,
+        "last_5s_abs_error_max": 0.004984382094363582
+      },
+      {
+        "robot": "SCARA",
+        "joint": 3,
+        "unit": "mm",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.9156562986696386,
+        "sample_rmse": 3.65339869494896,
+        "peak_abs_error": 7.680729519070788,
+        "last_5s_abs_error_max": 0.9546152255132583
+      },
+      {
+        "robot": "SCARA",
+        "joint": 4,
+        "unit": "deg",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.008007841151277844,
+        "sample_rmse": 0.00176050037424913,
+        "peak_abs_error": 0.008007841151277844,
+        "last_5s_abs_error_max": 0.008007841151277844
+      }
+    ]
+  },
+  {
+    "source": "SCORBOT_physics_feedback_20260917_155712.csv",
+    "sha256": "a833316c5992797fffc06f608d6fd3136f29ed33b97faeb905237b34a0a547a3",
+    "samples": 5169,
+    "time_start_s": 0.9860000000000001,
+    "time_end_s": 249.798,
+    "duplicate_timestamps": 0,
+    "last_window_duration_s": 4.9979999999999905,
+    "joints": [
+      {
+        "robot": "SCORBOT",
+        "joint": 1,
+        "unit": "deg",
+        "command_span": 8.594366926962344,
+        "command_varied": true,
+        "final_abs_error": 1.1493760666780872e-05,
+        "sample_rmse": 0.16837018823635716,
+        "peak_abs_error": 2.0260350018218265,
+        "last_5s_abs_error_max": 1.1494053916649705e-05
+      },
+      {
+        "robot": "SCORBOT",
+        "joint": 2,
+        "unit": "deg",
+        "command_span": 6.875493541569881,
+        "command_varied": true,
+        "final_abs_error": 0.0033805461769418343,
+        "sample_rmse": 0.3722056160237144,
+        "peak_abs_error": 2.5390015090645264,
+        "last_5s_abs_error_max": 0.0033805461769418343
+      },
+      {
+        "robot": "SCORBOT",
+        "joint": 3,
+        "unit": "deg",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.00842183923901274,
+        "sample_rmse": 0.136072833662015,
+        "peak_abs_error": 0.6101891477946992,
+        "last_5s_abs_error_max": 0.008426791213686613
+      },
+      {
+        "robot": "SCORBOT",
+        "joint": 4,
+        "unit": "deg",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.007941569836170004,
+        "sample_rmse": 0.007939552351233671,
+        "peak_abs_error": 0.007941569836170004,
+        "last_5s_abs_error_max": 0.007941569836170004
+      },
+      {
+        "robot": "SCORBOT",
+        "joint": 5,
+        "unit": "deg",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.006531360748898152,
+        "sample_rmse": 0.00652367241698983,
+        "peak_abs_error": 0.006531360748898152,
+        "last_5s_abs_error_max": 0.006531360748898152
+      }
+    ]
+  },
+  {
+    "source": "Stanford_physics_feedback_20260917_151641.csv",
+    "sha256": "c8f64df16a2f3fdfca168e99c914e157fbd56bdbaf97a0d5d2f2f6cc1ddac9b9",
+    "samples": 4683,
+    "time_start_s": 0.068,
+    "time_end_s": 223.278,
+    "duplicate_timestamps": 0,
+    "last_window_duration_s": 4.9979999999999905,
+    "joints": [
+      {
+        "robot": "Stanford",
+        "joint": 1,
+        "unit": "deg",
+        "command_span": 8.594366926962348,
+        "command_varied": true,
+        "final_abs_error": 0.00014602693948972956,
+        "sample_rmse": 0.2833972829884296,
+        "peak_abs_error": 2.452316963538948,
+        "last_5s_abs_error_max": 0.00014602693948972956
+      },
+      {
+        "robot": "Stanford",
+        "joint": 2,
+        "unit": "deg",
+        "command_span": 6.875493541569881,
+        "command_varied": true,
+        "final_abs_error": 0.000206182196272664,
+        "sample_rmse": 0.26879514046940833,
+        "peak_abs_error": 2.1906842145406884,
+        "last_5s_abs_error_max": 0.000206182196272664
+      },
+      {
+        "robot": "Stanford",
+        "joint": 3,
+        "unit": "mm",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 2.107021697637208,
+        "sample_rmse": 6.898583864754148,
+        "peak_abs_error": 14.043420047479742,
+        "last_5s_abs_error_max": 2.196771924159634
+      },
+      {
+        "robot": "Stanford",
+        "joint": 4,
+        "unit": "deg",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.01167681365811113,
+        "sample_rmse": 0.011673852992002421,
+        "peak_abs_error": 0.01167681365811113,
+        "last_5s_abs_error_max": 0.01167681365811113
+      },
+      {
+        "robot": "Stanford",
+        "joint": 5,
+        "unit": "deg",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.005634686591314164,
+        "sample_rmse": 0.005631761976022328,
+        "peak_abs_error": 0.005634686591314164,
+        "last_5s_abs_error_max": 0.005634686591314164
+      },
+      {
+        "robot": "Stanford",
+        "joint": 6,
+        "unit": "deg",
+        "command_span": 0.0,
+        "command_varied": false,
+        "final_abs_error": 0.011433194461726127,
+        "sample_rmse": 0.011429830187168848,
+        "peak_abs_error": 0.011433194461726127,
+        "last_5s_abs_error_max": 0.011433194461726127
+      }
+    ]
+  }
+]
